@@ -1,0 +1,308 @@
+/* html, body, div, span, applet, object, iframe, */
+/* h1, h2, h3, h4, h5, h6, p, blockquote, pre, */
+/* a, abbr, acronym, address, big, cite, code, */
+/* del, dfn, em, img, ins, kbd, q, s, samp, */
+/* small, strike, strong, sub, sup, tt, var, */
+/* b, u, i, center, */
+/* dl, dt, dd, ol, ul, li, */
+/* fieldset, form, label, legend, */
+/* table, caption, tbody, tfoot, thead, tr, th, td, */
+/* article, aside, canvas, details, embed,  */
+/* figure, figcaption, footer, header, hgroup,  */
+/* menu, nav, output, ruby, section, summary, */
+/* time, mark, audio, video { */
+	/* margin: 0; */
+	/* padding: 0; */
+	/* border: 0; */
+	/* font-size: 100%; */
+	/* font: inherit; */
+	/* vertical-align: baseline; */
+/* } */
+/* HTML5 display-role reset for older browsers */
+/* article, aside, details, figcaption, figure,  */
+/* footer, header, hgroup, menu, nav, section { */
+	/* display: block; */
+/* } */
+/* body { */
+	/* line-height: 1; */
+/* } */
+/* ol, ul { */
+	/* list-style: none; */
+/* } */
+/* blockquote, q { */
+	/* quotes: none; */
+/* } */
+/* blockquote:before, blockquote:after, */
+/* q:before, q:after { */
+	/* content: ''; */
+	/* content: none; */
+/* } */
+/* table { */
+	/* border-collapse: collapse; */
+	/* border-spacing: 0; */
+/* } */
+
+body{
+	margin:0;
+	padding:0;
+	background-image: url("Images/Backgrounds/1.jpg");
+	background-height:100%;
+	background-width:auto;
+	user-select: none;
+	overflow:hidden;
+	min-width:700px;
+}
+
+#container {
+	display:table;
+	margin:0 auto;
+	margin-top:35px;
+	box-shadow: 0px 0px 20px #888888;
+}
+
+#foot {
+	color:#DBDBDB;
+	display:table;
+	margin:0 auto;
+	position:relative;
+	top:50px;
+	text-align:center;
+}
+#foot a{
+	color:#DBDBDB;
+	style:none;
+}
+.center {
+	display:block;
+	margin:auto;
+}
+
+.clear{
+	clear:both;
+}
+
+#cursor{
+	position:absolute;
+	pointer-events: none;
+	z-index:100;
+}
+#RUSure, #saved {
+	float:right;
+	text-align:center;
+	margin:5px;
+	color:#DBDBDB;
+	background:#4c4c4c;
+}
+#openMenu {
+	width:635px;
+	height:635px;
+	background:#4c4c4c;
+	border-radius:10px;
+	position:fixed;
+}
+.closeButton {
+	color:#4c4c4c;
+	background:#DBDBDB;
+	padding:5px;
+	margin:5px;
+	border-radius:5px;
+}
+.closeButton:hover {
+	color:white;
+	cursor:pointer;
+}
+
+
+/*------------Controls-------------*/ 
+
+input[type="button"], input[type="file"]{
+	width:86px;
+}
+input[type="number"]{
+	width:40px;
+}
+input[type=range] {
+	-webkit-appearance:none !important;
+	-moz-appearance:none;
+	margin:5px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:none !important;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 8px;
+  border-radius: 3px;
+  background: #DBDBDB;
+  cursor: pointer;
+  margin-top: -3px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-moz-range-thumb {
+  -moz-appearance:none;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 8px;
+  border-radius: 3px;
+  background: #DBDBDB;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus {
+	outline:none;
+}
+#red::-webkit-slider-runnable-track {
+	background:red;
+}
+#green::-webkit-slider-runnable-track {
+	background:green;
+}
+#blue::-webkit-slider-runnable-track {
+	background:blue;
+}
+#size::-webkit-slider-runnable-track {
+	-webkit-appearance: none;
+	background:black;
+	height:1px;
+}
+#red::-moz-range-track {
+	background:red;
+}
+#green::-moz-range-track {
+	background:green;
+}
+#blue::-moz-range-track {
+	background:blue;
+}
+#size::-moz-range-track{
+	-moz-appearance:none;
+	background:black;
+	height:1px;
+}
+#size::-webkit-slider-thumb {
+  -webkit-appearance:none !important;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #DBDBDB;
+  cursor: pointer;
+  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+#size::-moz-range-thumb {
+  -moz-appearance:none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 5px;
+  border-radius: 50%;
+  background: #DBDBDB;
+  cursor: pointer;
+  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+#colorPreview {
+	margin-top:18px;
+	width:40px;
+	height:40px; 
+	float:right;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+#tools {
+	float:left;
+	width:35px;
+	height:500px;
+	background-color:#4c4c4c;
+	padding:100px 0 0 0;
+}
+#tool-images  img{
+	border-radius:50%;
+	box-sizing:border-box;
+	width:25px;
+	margin:0px 5px 0 5px;
+}
+.icon {
+	border-radius:50%;
+	box-sizing:border-box;
+	width:25px;
+	margin:0px 5px 0 5px;
+}
+.icon:hover, .tool-active , #tool-images  img:hover{
+	cursor:pointer;
+	border:1px solid white;
+	border-radius:50%;
+	box-sizing:border-box;
+	width:25px;
+	margin:0px 5px 0 5px;
+}
+#options {
+	float:left;
+	height:80px;
+	width:500px;
+	padding:10px 0;
+	background-color:#4c4c4c;
+}
+#layerThumbNails{
+	float:left;
+	position:relative;
+	height:500px;
+	width:100px;
+	padding:100px 0 0 0;
+	background-color:#4c4c4c;
+}
+.thumbNail {
+	width:70px;
+	height:70px;
+	margin:5px 20px 5px 15px;
+	z-index:10;
+	background-color:white;
+	box-sizing:border-box;
+}
+
+#footer {
+	width:500px;
+	height:27px;
+	background-color:#4c4c4c;
+	margin-top:600px;
+	padding:4px 100px 4px 35px;
+}
+
+/*------------canvases----------------*/ 
+
+#canvases{
+	position:absolute;
+	margin:100px 0 0 35px;
+	float:left;
+}
+
+#back-canvas{
+	position:absolute;
+	left:0;
+	background-color:white;
+}
+
+#front-canvas{
+	cursor:none;
+	position:absolute;
+	left:0;
+}
+
+#compCan{
+	position:absolute;
+	left:0;
+}

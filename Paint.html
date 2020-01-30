@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="script.js" defer></script>
+	<title>Paint</title>
+	<link rel="shortcut icon" type="image/png" href="Images/Logo/logoFavicon.png"/>
+</head>
+<body>
+	<div id="openMenu" style="display:none;">
+	test
+	</div>
+	<div id="container">
+		<div id="tools">
+			<div id="tool-images">
+				<img id="pencil" src="Images/tools/pencil.png" title="Pencil shortcut: 'P'">
+					<!-- <a title="Test" class="toolTip">ToolTip</a> -->
+				<img id="eraser" src="Images/tools/eraser.png" title="Erase shortcut: 'E'">
+				<img id="hand" src="Images/tools/move.png" title="Move Canvas">
+				<img id="paintBucket" src="Images/tools/paintBucket.png" title="Paint Bucket">
+				<img id="eyeDropper" src="Images/tools/eyeDropper.png" title="Select Colour">
+				<img id="shapes" src="Images/tools/shapes.png" title="Draw Shape">
+				<img id="textTool" src="Images/tools/text.png" title="Text">
+				<img id="sprayCan" src="Images/tools/sprayCan.png" title="Spray Can">
+			</div>
+		</div>
+			
+		<div id="options">
+			<div id="sizeOpt" style="position:relative; display:none; float:left;width:150px;">
+				<p style="color:#DBDBDB; float:left; margin-bottom:0;">Size: &nbsp;&nbsp;</p>
+				<p id="sizeDisplay" style="color:#DBDBDB; margin-bottom:0;">12</p>
+				<input type="range" value="12" min="1" max="250" id="size" title="Shortcut: '[' and ']'">
+			</div>
+			<div id="colorOpt" style="position:relative; display:none; float:left; width:230px;">
+				<div style="width:175px; float:left; position:relative">
+				<p style="float:left; color:#DBDBDB; font-size:12px; margin:7px 1px 0 0;">R:</p>
+					<input type="range" value="0" min="0" max="255" id="red">
+					<p id="redValue" style="position:absolute; right:0; top:1px; color:#DBDBDB; font-size:12px; margin-top:6px">0</p><br>
+				<p style="float:left; color:#DBDBDB; font-size:12px; margin:7px 0 0 0;">G:</p>
+					<input type="range" value="0" min="0" max="255" id="green">
+					<p id="greenValue" style="position:absolute; right:0; top: 21px; color:#DBDBDB; font-size:12px;">0</p><br>
+				<p style="float:left; color:#DBDBDB; font-size:12px; margin:7px 1px 0 0;">B:</p>
+					<input type="range" value="0" min="0" max="255" id="blue">
+					<p id="blueValue" style="position:absolute; right:0; top:46px; color:#DBDBDB; font-size:12px;">0</p>
+				</div>
+				<div id="colorPreview">a</div>
+			</div>
+			<div id="pencilOpt" style="display:none">
+			<div class="clear"></div>
+				<input type="number" id="tool-size-input" value="12" min="0" max="250"style="display:none;">		
+			</div>
+			
+			<div id="eraserOpt" style="display:none; float:left;">
+			
+			</div>
+			<div id="handOpt" style="display:none">
+			
+			</div>
+			<div id="paintBucketOpt" style="display:none">
+			
+			</div>
+			<div id="eyeDropperOpt" style="display:none">
+			
+			</div>
+			<div id="shapesOpt" style="display:none">
+			
+			</div>
+			<div id="textToolOpt" style="display:none">
+		
+			</div>
+			<div id="sprayCanOpt" style="display:none">
+		
+			</div>
+		</div>		
+			
+		<div id="layerThumbNails">
+			<div id="layers">
+				<img id="new-layer" class="icon" src="Images/icons/newLayer.png" style="margin:0 0 0 10px">
+				<img id="remove-layer" class="icon" src="Images/icons/removeLayer.png" style="margin:0" title="WARNING! Remove layer function can break the canvas arrays and layer select functions">
+				<p id="noLayers"
+				style="display:none; color:#DBDBDB; text-align:center; width:70px; margin:auto;">
+					Add a Layer to Draw</p>
+			</div>
+			<hr style="border-color:transparent; margin-top:1px;" width="80%" id="10"/>
+		</div>
+		
+		<div id="canvases">
+			<img src="Images/Logo/logo.png" id="logo" style="width:400px; position:absolute; z-index:1000; left:50px; top:90px;">
+			<canvas id="front-canvas" width="500" height="500"></canvas>
+			<div id="insert"></div>
+			<canvas id="back-canvas" width="500" height="500"></canvas>
+			<canvas id="compCan" width="500" height="500" style="display:none;"></canvas>
+		</div>
+		
+		<div id="footer">
+			<img id="clearButton" class="icon" src="Images/icons/trash.png" style="margin:0;">
+			<img id="saveButton" class="icon" src="Images/icons/save.png" style="margin:0;">	
+			<img id="openButton" class="icon" src="Images/icons/open.png" style="margin:0;">
+				<!-- <input type="file" id="openFile"> -->
+			
+			<div id="RUSure" style="display:none;">
+				Delete project?
+				<span class="closeButton" onclick="this.parentElement.style.display='none'; yesOrNo = true; document.getElementById('clearButton').onclick();">Yes</span>
+				<span class="closeButton" onclick="this.parentElement.style.display='none'; yesOrNo = false;">No</span>
+			</div>
+			<div id="saved" style="display:none;">
+				Saved. Share to your followers?
+				<span class="closeButton" onclick="isBlank();"> <!--insert function to post--> Yes</span>
+				<span class="closeButton" onclick="this.parentElement.style.display='none';">No</span>
+			</div>
+		</div>
+	</div>
+	
+	<div id="foot">
+		Paint2.0 a proud creation of Spencer Teetaert<br>
+		Visit <a href="http://doodleszone.com/index.php" target="_blank">DoodlesZone.com</a> to share your creations!<br>
+		Have fun painting!
+	</div>
+	
+	<img id="cursor" src="images/tools/pencil.png">
+
+</body>
+</html>	
+	
